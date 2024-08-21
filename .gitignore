@@ -1,0 +1,6 @@
+.DS_Store
+/qc-data
+/other
+/figures
+/numerical-unitary-data
+**.ipynb
