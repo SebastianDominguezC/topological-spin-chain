@@ -12,6 +12,11 @@ from qiskit.circuit.library import (
 )
 from qiskit_aer import AerSimulator
 
+from qiskit_aer.noise import (
+    NoiseModel,
+    pauli_error,
+)
+
 RXX = RXXGate
 RYY = RYYGate
 RZZ = RZZGate
@@ -348,7 +353,9 @@ def twisted_dimer_evolution(L, J, alpha, twist_loc, t0, tf, N):
     return qc.to_gate()
 
 
-def berry_phase_circuit(n_qubits, J, alpha, twist_loc, t0, tf, time_steps, i, N):
+def berry_phase_circuit(
+    n_qubits, J, alpha, twist_loc, t0, tf, time_steps, i, N, noisy=False
+):
     # Visual logs
     print(f"Running sim {i + 1} / {N} with J = {J} and dimer = {alpha}")
     print("-------")
@@ -378,13 +385,29 @@ def berry_phase_circuit(n_qubits, J, alpha, twist_loc, t0, tf, time_steps, i, N)
 
     qc.measure(0, 0)
 
+    # Noisy simulator
     simulator = AerSimulator()
+
+    if noisy:
+        # Example error probabilities
+        p_gate1 = 0.0000001
+
+        # QuantumError objects
+        error_gate1 = pauli_error([("X", p_gate1), ("I", 1 - p_gate1)])
+        error_gate2 = error_gate1.tensor(error_gate1)
+
+        # Add errors to noise model
+        noise_bit_flip = NoiseModel()
+        noise_bit_flip.add_all_qubit_quantum_error(error_gate1, ["u1", "u2", "u3"])
+        noise_bit_flip.add_all_qubit_quantum_error(error_gate2, ["cx"])
+
+        simulator = AerSimulator(noise_model=noise_bit_flip)
 
     # Transpile for simulator
     circ = transpile(qc, simulator, optimization_level=3)
 
     # Run and get counts
-    result = simulator.run(circ).result()
+    result = simulator.run(circ, shots=20_000).result()
 
     zeros = result.data()["counts"].get("0x0", 0)
     ones = result.data()["counts"].get("0x1", 0)
@@ -438,14 +461,18 @@ if __name__ == "__main__":
     start_time = time.time()
 
     # Sim data
-    n_qubits = 8
+    n_qubits = 4
     t0 = 0
     tf = 20
     time_steps = 200
     twist_loc = 0
 
+    # Noisy model
+    noisy = True
+
+    # Params
     J = 1
-    alpha = np.arange(0, 2.1, 0.1)
+    alpha = np.arange(0, 2.1, 0.25)
     # alpha = np.array([0.1])
 
     berry_phases = np.zeros(len(alpha))
@@ -462,8 +489,8 @@ if __name__ == "__main__":
         phase = result[1]
         berry_phases[i] = phase
         circuit_gates[i] = sum(result[2].values())
-        print(sum(result[2].values()))
-        print(f"Circuit depth: {result[3]}")
+        # print(sum(result[2].values()))
+        # print(f"Circuit depth: {result[3]}")
 
     # Print info
     sim_start_info(n_qubits, J, alpha, time_steps, twist_loc, threshold)
@@ -472,7 +499,18 @@ if __name__ == "__main__":
     for i in range(len(alpha)):
         pool.apply_async(
             berry_phase_circuit,
-            args=(n_qubits, J, alpha[i], twist_loc, t0, tf, time_steps, i, len(alpha)),
+            args=(
+                n_qubits,
+                J,
+                alpha[i],
+                twist_loc,
+                t0,
+                tf,
+                time_steps,
+                i,
+                len(alpha),
+                noisy,
+            ),
             callback=async_data,
         )
 
