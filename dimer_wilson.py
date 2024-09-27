@@ -143,7 +143,7 @@ def twisted_nn_heisenberg_chain(n_qubits, interactions, twist, twist_loc):
     return H
 
 
-def berry_phase_hatsugai(n_qubits, site, C, bonds, threshold, feedback=False):
+def berry_phase_calculation(n_qubits, site, C, bonds, threshold, feedback=False):
     if feedback:
         print(f"running site {site}")
 
@@ -160,7 +160,7 @@ def berry_phase_hatsugai(n_qubits, site, C, bonds, threshold, feedback=False):
         Ht = twisted_nn_heisenberg_chain(n_qubits, bonds, twist, site) / 4
 
         # Calculate new "ground state" wave fx
-        next_state = ground_state_optimized(Ht, show_states=True)
+        next_state = ground_state_optimized(Ht, show_states=False)
 
         # Wilson loop operator
         c1 = np.vdot(ref_state, prev_state)
@@ -248,9 +248,9 @@ if __name__ == "__main__":
     sim_start_info(n_qubits, J, alpha, N, threshold)
 
     # Start twist process for every site
-    for site in range(1):
+    for site in range(n_qubits):
         pool.apply_async(
-            berry_phase_hatsugai,
+            berry_phase_calculation,
             args=(n_qubits, site, C, bonds, threshold, True),
             callback=async_data,
         )

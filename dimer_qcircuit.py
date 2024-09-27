@@ -407,7 +407,7 @@ def berry_phase_circuit(
     circ = transpile(qc, simulator, optimization_level=3)
 
     # Run and get counts
-    result = simulator.run(circ, shots=20_000).result()
+    result = simulator.run(circ, shots=10_000).result()
 
     zeros = result.data()["counts"].get("0x0", 0)
     ones = result.data()["counts"].get("0x1", 0)
@@ -461,14 +461,14 @@ if __name__ == "__main__":
     start_time = time.time()
 
     # Sim data
-    n_qubits = 4
+    n_qubits = 8
     t0 = 0
     tf = 20
     time_steps = 200
     twist_loc = 0
 
     # Noisy model
-    noisy = True
+    noisy = False
 
     # Params
     J = 1
@@ -489,8 +489,8 @@ if __name__ == "__main__":
         phase = result[1]
         berry_phases[i] = phase
         circuit_gates[i] = sum(result[2].values())
-        # print(sum(result[2].values()))
-        # print(f"Circuit depth: {result[3]}")
+        print(sum(result[2].values()))
+        print(f"Circuit depth: {result[3]}")
 
     # Print info
     sim_start_info(n_qubits, J, alpha, time_steps, twist_loc, threshold)

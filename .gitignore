@@ -1,7 +1,5 @@
 .DS_Store
-/qc-data
-/other
-/figures
-/numerical-unitary-data
-**.ipynb
-/qc-data-2
+**.pkg
+**.nb
+/data-dimer
+/data-tetra
