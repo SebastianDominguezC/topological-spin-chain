@@ -1,5 +1,15 @@
 .DS_Store
+/qc-data
+/data/legacy
+/other
+/figures
+/numerical-unitary-data
+/qc-data-2
+/qc-optimizing-data
+/jupyters
+/exploration-figs
 **.pkg
+/var-data
+/logs
 **.nb
-/data-dimer
-/data-tetra
+/.vscode

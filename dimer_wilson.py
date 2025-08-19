@@ -113,7 +113,7 @@ def ground_state_optimized(H, show_states=False):
     if show_states:
         print(E[0])
 
-    return extract_eigenvector(i, E[1])
+    return extract_eigenvector(i, E[1]), E[0][0], E[0][1]
 
 
 # Twistyyy
@@ -152,15 +152,25 @@ def berry_phase_calculation(n_qubits, site, C, bonds, threshold, feedback=False)
 
     # Ground / reference state
     Hg = twisted_nn_heisenberg_chain(n_qubits, bonds, 0, site) / 4
-    ref_state = ground_state_optimized(Hg)
+    ref_state, e0, e1 = ground_state_optimized(Hg)
     prev_state = ref_state
+
+    energies_0 = [e0]
+    energies_1 = [e1]
 
     for twist in C:
         # Twist hamiltonian
         Ht = twisted_nn_heisenberg_chain(n_qubits, bonds, twist, site) / 4
 
         # Calculate new "ground state" wave fx
-        next_state = ground_state_optimized(Ht, show_states=False)
+        next_state, e0, e1 = ground_state_optimized(Ht, show_states=False)
+
+        if e0 <= e1:
+            energies_0.append(e0)
+            energies_1.append(e1)
+        else:
+            energies_0.append(e1)
+            energies_1.append(e0)
 
         # Wilson loop operator
         c1 = np.vdot(ref_state, prev_state)
@@ -180,7 +190,7 @@ def berry_phase_calculation(n_qubits, site, C, bonds, threshold, feedback=False)
     if berry_phase < threshold:
         berry_phase = 0
 
-    return (site, berry_phase)
+    return (site, berry_phase, energies_0, energies_1)
 
 
 def print_barrier():
@@ -225,11 +235,11 @@ if __name__ == "__main__":
     n_qubits = 6
     J = 1
     g = 0.01
-    alpha = J / g
+    alpha = 1
     bonds = interaction_chain_nearest_neighbors(n_qubits, J, alpha)
 
     threshold = 1.0e-10
-    N = 16
+    N = 100
     dC = 2 * np.pi / N
 
     C = np.arange(dC, 2 * np.pi, dC)
@@ -237,12 +247,16 @@ if __name__ == "__main__":
     # Multi-processors
     pool = mp.Pool(mp.cpu_count())
     berry_phases = np.zeros(n_qubits)
+    energies_0 = [[] for _ in range(n_qubits)]
+    energies_1 = [[] for _ in range(n_qubits)]
 
     # Callback for async data
     def async_data(result):
         i = result[0]
         phase = result[1]
         berry_phases[i] = phase
+        energies_0[i] = result[2]
+        energies_1[i] = result[3]
 
     # Print info
     sim_start_info(n_qubits, J, alpha, N, threshold)
@@ -261,3 +275,7 @@ if __name__ == "__main__":
 
     # Print info
     sim_end_info(start_time, bonds, berry_phases)
+
+    print(energies_0)
+    print(energies_1)
+    print(C)

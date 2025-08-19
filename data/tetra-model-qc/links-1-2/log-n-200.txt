@@ -1,0 +1,887 @@
+running run number: 0 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 7.153e+00 | time:   0.9702 | largest rank:  16
+iter: 1  | eps: 9.514e-15 | time:   1.9499 | largest rank:  16 <- converged: eps < 1e-06
+Did 19096 function evaluations, which took 1.381s (1.382e+04 evals/s)
+
+<ipython-input-25-59f98614d112>:428: DeprecationWarning: __array_wrap__ must accept context and return_scalar arguments (positionally) in the future. (Deprecated NumPy 2.0)
+  R = (S @ V).clone().detach()
+finished applying gates in 58.33887267112732
+Transpiling now
+finished transpiling in 43.15340209007263
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 21600), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  352820
+Depth:  310211
+Finished running in 66.33684468269348
+Berry phase is:
+3.045014977380883
+running run number: 1 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 7.410e-01 | time:   1.0189 | largest rank:  16
+iter: 1  | eps: 7.410e-01 | time:   2.0585 | largest rank:  16
+iter: 2  | eps: 7.411e-01 | time:   3.0991 | largest rank:  16
+iter: 3  | eps: 7.411e-01 | time:   4.1388 | largest rank:  16
+iter: 4  | eps: 7.411e-01 | time:   5.1674 | largest rank:  16
+iter: 5  | eps: 7.411e-01 | time:   6.2076 | largest rank:  16
+iter: 6  | eps: 7.411e-01 | time:   7.2625 | largest rank:  16
+iter: 7  | eps: 7.411e-01 | time:   8.3148 | largest rank:  16
+iter: 8  | eps: 7.411e-01 | time:  10.3822 | largest rank:  16
+iter: 9  | eps: 7.411e-01 | time:  11.9755 | largest rank:  16
+iter: 10 | eps: 7.411e-01 | time:  13.0380 | largest rank:  16
+iter: 11 | eps: 7.411e-01 | time:  14.1222 | largest rank:  16
+iter: 12 | eps: 7.411e-01 | time:  15.1677 | largest rank:  16
+iter: 13 | eps: 7.411e-01 | time:  16.3442 | largest rank:  16
+iter: 14 | eps: 7.411e-01 | time:  17.5555 | largest rank:  16
+iter: 15 | eps: 7.411e-01 | time:  18.6082 | largest rank:  16
+iter: 16 | eps: 7.411e-01 | time:  19.6346 | largest rank:  16
+iter: 17 | eps: 7.411e-01 | time:  20.6585 | largest rank:  16
+iter: 18 | eps: 7.411e-01 | time:  21.8308 | largest rank:  16
+iter: 19 | eps: 7.411e-01 | time:  23.9449 | largest rank:  16
+iter: 20 | eps: 7.411e-01 | time:  25.3486 | largest rank:  16
+iter: 21 | eps: 7.411e-01 | time:  26.3810 | largest rank:  16
+iter: 22 | eps: 7.411e-01 | time:  27.4107 | largest rank:  16
+iter: 23 | eps: 7.411e-01 | time:  28.4827 | largest rank:  16
+iter: 24 WARNING:root:eps=0.741061 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a61264b80>
+| eps: 7.411e-01 | time:  29.9780 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 21.19s (1.126e+04 evals/s)
+
+finished applying gates in 82.34344816207886
+Transpiling now
+finished transpiling in 50.27240180969238
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 72.98640465736389
+Berry phase is:
+2.8753260818876734
+running run number: 2 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 3.582e-01 | time:   1.4877 | largest rank:  16
+iter: 1  | eps: 1.317e-01 | time:   2.4919 | largest rank:  16
+iter: 2  | eps: 1.409e-01 | time:   3.5248 | largest rank:  16
+iter: 3  | eps: 1.409e-01 | time:   4.5563 | largest rank:  16
+iter: 4  | eps: 1.409e-01 | time:   5.6291 | largest rank:  16
+iter: 5  | eps: 1.409e-01 | time:   6.7004 | largest rank:  16
+iter: 6  | eps: 1.409e-01 | time:   7.7205 | largest rank:  16
+iter: 7  | eps: 1.409e-01 | time:   8.7477 | largest rank:  16
+iter: 8  | eps: 1.409e-01 | time:   9.7764 | largest rank:  16
+iter: 9  | eps: 1.409e-01 | time:  10.7926 | largest rank:  16
+iter: 10 | eps: 1.409e-01 | time:  12.8799 | largest rank:  16
+iter: 11 | eps: 1.409e-01 | time:  14.4883 | largest rank:  16
+iter: 12 | eps: 1.409e-01 | time:  15.5369 | largest rank:  16
+iter: 13 | eps: 1.409e-01 | time:  16.5793 | largest rank:  16
+iter: 14 | eps: 1.409e-01 | time:  17.6118 | largest rank:  16
+iter: 15 | eps: 1.409e-01 | time:  18.6599 | largest rank:  16
+iter: 16 | eps: 1.409e-01 | time:  19.7038 | largest rank:  16
+iter: 17 | eps: 1.409e-01 | time:  20.7622 | largest rank:  16
+iter: 18 | eps: 1.409e-01 | time:  21.8001 | largest rank:  16
+iter: 19 | eps: 1.409e-01 | time:  22.8146 | largest rank:  16
+iter: 20 | eps: 1.409e-01 | time:  23.8442 | largest rank:  16
+iter: 21 | eps: 1.409e-01 | time:  25.4776 | largest rank:  16
+iter: 22 | eps: 1.409e-01 | time:  27.3334 | largest rank:  16
+iter: 23 | eps: 1.409e-01 | time:  28.4383 | largest rank:  16
+iter: 24 WARNING:root:eps=0.140912 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a7c0eede0>
+| eps: 1.409e-01 | time:  29.4878 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 20.88s (1.143e+04 evals/s)
+
+finished applying gates in 79.83495879173279
+Transpiling now
+finished transpiling in 73.81173706054688
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 93.19702386856079
+Berry phase is:
+2.8786911840345124
+running run number: 3 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 2.636e-01 | time:   2.1188 | largest rank:  16
+iter: 1  | eps: 2.850e-01 | time:   3.6307 | largest rank:  16
+iter: 2  | eps: 2.850e-01 | time:   5.9793 | largest rank:  16
+iter: 3  | eps: 2.850e-01 | time:   8.9064 | largest rank:  16
+iter: 4  | eps: 2.850e-01 | time:  10.0530 | largest rank:  16
+iter: 5  | eps: 2.850e-01 | time:  11.1776 | largest rank:  16
+iter: 6  | eps: 2.850e-01 | time:  12.2869 | largest rank:  16
+iter: 7  | eps: 2.850e-01 | time:  13.4289 | largest rank:  16
+iter: 8  | eps: 2.850e-01 | time:  14.5297 | largest rank:  16
+iter: 9  | eps: 2.850e-01 | time:  15.6290 | largest rank:  16
+iter: 10 | eps: 2.850e-01 | time:  16.7710 | largest rank:  16
+iter: 11 | eps: 2.850e-01 | time:  17.9022 | largest rank:  16
+iter: 12 | eps: 2.850e-01 | time:  19.2671 | largest rank:  16
+iter: 13 | eps: 2.850e-01 | time:  21.3563 | largest rank:  16
+iter: 14 | eps: 2.850e-01 | time:  22.7214 | largest rank:  16
+iter: 15 | eps: 2.850e-01 | time:  23.8465 | largest rank:  16
+iter: 16 | eps: 2.850e-01 | time:  24.9790 | largest rank:  16
+iter: 17 | eps: 2.850e-01 | time:  26.1199 | largest rank:  16
+iter: 18 | eps: 2.850e-01 | time:  27.2618 | largest rank:  16
+iter: 19 | eps: 2.850e-01 | time:  28.3809 | largest rank:  16
+iter: 20 | eps: 2.850e-01 | time:  29.4704 | largest rank:  16
+iter: 21 | eps: 2.850e-01 | time:  30.5936 | largest rank:  16
+iter: 22 | eps: 2.850e-01 | time:  31.7077 | largest rank:  16
+iter: 23 | eps: 2.850e-01 | time:  33.6284 | largest rank:  16
+iter: 24 WARNING:root:eps=0.285045 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a62c4a5c0>
+| eps: 2.850e-01 | time:  35.5027 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 24.85s (9604 evals/s)
+
+finished applying gates in 91.12574982643127
+Transpiling now
+finished transpiling in 53.62755799293518
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 76.03807926177979
+Berry phase is:
+2.7547371862785153
+running run number: 4 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 2.717e-01 | time:   1.0515 | largest rank:  16
+iter: 1  | eps: 2.701e-01 | time:   2.1549 | largest rank:  16
+iter: 2  | eps: 2.698e-01 | time:   5.2534 | largest rank:  16
+iter: 3  | eps: 2.698e-01 | time:   6.3306 | largest rank:  16
+iter: 4  | eps: 2.698e-01 | time:   7.4404 | largest rank:  16
+iter: 5  | eps: 2.698e-01 | time:   8.6428 | largest rank:  16
+iter: 6  | eps: 2.698e-01 | time:  10.5431 | largest rank:  16
+iter: 7  | eps: 2.698e-01 | time:  12.4486 | largest rank:  16
+iter: 8  | eps: 2.698e-01 | time:  13.5238 | largest rank:  16
+iter: 9  | eps: 2.698e-01 | time:  14.6266 | largest rank:  16
+iter: 10 | eps: 2.698e-01 | time:  15.7994 | largest rank:  16
+iter: 11 | eps: 2.698e-01 | time:  16.9477 | largest rank:  16
+iter: 12 | eps: 2.698e-01 | time:  18.0218 | largest rank:  16
+iter: 13 | eps: 2.698e-01 | time:  19.0992 | largest rank:  16
+iter: 14 | eps: 2.698e-01 | time:  20.1515 | largest rank:  16
+iter: 15 | eps: 2.698e-01 | time:  21.2197 | largest rank:  16
+iter: 16 | eps: 2.698e-01 | time:  22.6170 | largest rank:  16
+iter: 17 | eps: 2.698e-01 | time:  24.9185 | largest rank:  16
+iter: 18 | eps: 2.698e-01 | time:  26.2738 | largest rank:  16
+iter: 19 | eps: 2.698e-01 | time:  27.3667 | largest rank:  16
+iter: 20 | eps: 2.698e-01 | time:  28.4880 | largest rank:  16
+iter: 21 | eps: 2.698e-01 | time:  29.7436 | largest rank:  16
+iter: 22 | eps: 2.698e-01 | time:  30.8298 | largest rank:  16
+iter: 23 | eps: 2.698e-01 | time:  31.9074 | largest rank:  16
+iter: 24 WARNING:root:eps=0.269843 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a62e27f60>
+| eps: 2.698e-01 | time:  33.0345 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 22.3s (1.07e+04 evals/s)
+
+finished applying gates in 89.23669672012329
+Transpiling now
+finished transpiling in 52.66847324371338
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 75.31285119056702
+Berry phase is:
+2.7740690803841264
+running run number: 5 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 4.376e-01 | time:   1.0249 | largest rank:  16
+iter: 1  | eps: 4.329e-01 | time:   2.0612 | largest rank:  16
+iter: 2  | eps: 4.172e-01 | time:   3.1393 | largest rank:  16
+iter: 3  | eps: 4.165e-01 | time:   4.1877 | largest rank:  16
+iter: 4  | eps: 4.165e-01 | time:   6.2466 | largest rank:  16
+iter: 5  | eps: 4.165e-01 | time:   7.9514 | largest rank:  16
+iter: 6  | eps: 4.165e-01 | time:   9.2175 | largest rank:  16
+iter: 7  | eps: 4.165e-01 | time:  10.3863 | largest rank:  16
+iter: 8  | eps: 4.165e-01 | time:  11.5536 | largest rank:  16
+iter: 9  | eps: 4.165e-01 | time:  12.5841 | largest rank:  16
+iter: 10 | eps: 4.165e-01 | time:  13.6064 | largest rank:  16
+iter: 11 | eps: 4.165e-01 | time:  14.7537 | largest rank:  16
+iter: 12 | eps: 4.165e-01 | time:  15.7822 | largest rank:  16
+iter: 13 | eps: 4.165e-01 | time:  16.9369 | largest rank:  16
+iter: 14 | eps: 4.165e-01 | time:  18.2060 | largest rank:  16
+iter: 15 | eps: 4.165e-01 | time:  20.5012 | largest rank:  16
+iter: 16 | eps: 4.165e-01 | time:  21.8385 | largest rank:  16
+iter: 17 | eps: 4.165e-01 | time:  22.8983 | largest rank:  16
+iter: 18 | eps: 4.165e-01 | time:  24.0894 | largest rank:  16
+iter: 19 | eps: 4.165e-01 | time:  25.2659 | largest rank:  16
+iter: 20 | eps: 4.165e-01 | time:  26.3142 | largest rank:  16
+iter: 21 | eps: 4.165e-01 | time:  27.5002 | largest rank:  16
+iter: 22 | eps: 4.165e-01 | time:  28.5170 | largest rank:  16
+iter: 23 | eps: 4.165e-01 | time:  29.6211 | largest rank:  16
+iter: 24 WARNING:root:eps=0.416483 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a62f6da80>
+| eps: 4.165e-01 | time:  30.5973 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 21.61s (1.104e+04 evals/s)
+
+finished applying gates in 86.0022828578949
+Transpiling now
+finished transpiling in 53.439422607421875
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 74.02863502502441
+Berry phase is:
+2.6896032521354987
+running run number: 6 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 5.420e-01 | time:   1.0768 | largest rank:  16
+iter: 1  | eps: 4.865e-01 | time:   2.1381 | largest rank:  16
+iter: 2  | eps: 4.867e-01 | time:   3.6815 | largest rank:  16
+iter: 3  | eps: 4.867e-01 | time:   5.8326 | largest rank:  16
+iter: 4  | eps: 4.867e-01 | time:   6.8436 | largest rank:  16
+iter: 5  | eps: 4.867e-01 | time:   8.0310 | largest rank:  16
+iter: 6  | eps: 4.867e-01 | time:   9.1186 | largest rank:  16
+iter: 7  | eps: 4.867e-01 | time:  10.1460 | largest rank:  16
+iter: 8  | eps: 4.867e-01 | time:  11.1985 | largest rank:  16
+iter: 9  | eps: 4.867e-01 | time:  12.2459 | largest rank:  16
+iter: 10 | eps: 4.867e-01 | time:  13.2907 | largest rank:  16
+iter: 11 | eps: 4.867e-01 | time:  14.3484 | largest rank:  16
+iter: 12 | eps: 4.867e-01 | time:  15.3892 | largest rank:  16
+iter: 13 | eps: 4.867e-01 | time:  17.1451 | largest rank:  16
+iter: 14 | eps: 4.867e-01 | time:  19.0934 | largest rank:  16
+iter: 15 | eps: 4.867e-01 | time:  20.1990 | largest rank:  16
+iter: 16 | eps: 4.867e-01 | time:  21.3083 | largest rank:  16
+iter: 17 | eps: 4.867e-01 | time:  22.4609 | largest rank:  16
+iter: 18 | eps: 4.867e-01 | time:  23.6560 | largest rank:  16
+iter: 19 | eps: 4.867e-01 | time:  24.7474 | largest rank:  16
+iter: 20 | eps: 4.867e-01 | time:  26.0209 | largest rank:  16
+iter: 21 | eps: 4.867e-01 | time:  27.1090 | largest rank:  16
+iter: 22 | eps: 4.867e-01 | time:  28.2279 | largest rank:  16
+iter: 23 | eps: 4.867e-01 | time:  29.6477 | largest rank:  16
+iter: 24 WARNING:root:eps=0.486696 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a60a4ac00>
+| eps: 4.867e-01 | time:  31.4227 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 22.25s (1.073e+04 evals/s)
+
+finished applying gates in 84.54528856277466
+Transpiling now
+finished transpiling in 52.799164056777954
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 75.36502766609192
+Berry phase is:
+2.4154783150295733
+running run number: 7 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 7.119e-01 | time:   1.1608 | largest rank:  16
+iter: 1  | eps: 6.606e-01 | time:   3.4473 | largest rank:  16
+iter: 2  | eps: 6.527e-01 | time:   5.2031 | largest rank:  16
+iter: 3  | eps: 6.456e-01 | time:   6.2544 | largest rank:  16
+iter: 4  | eps: 6.456e-01 | time:   7.3439 | largest rank:  16
+iter: 5  | eps: 6.456e-01 | time:   8.4918 | largest rank:  16
+iter: 6  | eps: 6.456e-01 | time:   9.5306 | largest rank:  16
+iter: 7  | eps: 6.456e-01 | time:  10.5963 | largest rank:  16
+iter: 8  | eps: 6.456e-01 | time:  11.6504 | largest rank:  16
+iter: 9  | eps: 6.456e-01 | time:  12.7150 | largest rank:  16
+iter: 10 | eps: 6.456e-01 | time:  13.7728 | largest rank:  16
+iter: 11 | eps: 6.456e-01 | time:  14.9629 | largest rank:  16
+iter: 12 | eps: 6.456e-01 | time:  16.9895 | largest rank:  16
+iter: 13 | eps: 6.456e-01 | time:  18.4524 | largest rank:  16
+iter: 14 | eps: 6.456e-01 | time:  19.5275 | largest rank:  16
+iter: 15 | eps: 6.456e-01 | time:  20.6862 | largest rank:  16
+iter: 16 | eps: 6.456e-01 | time:  21.7583 | largest rank:  16
+iter: 17 | eps: 6.456e-01 | time:  22.8162 | largest rank:  16
+iter: 18 | eps: 6.456e-01 | time:  23.8754 | largest rank:  16
+iter: 19 | eps: 6.456e-01 | time:  24.9090 | largest rank:  16
+iter: 20 | eps: 6.456e-01 | time:  25.9697 | largest rank:  16
+iter: 21 | eps: 6.456e-01 | time:  27.0409 | largest rank:  16
+iter: 22 | eps: 6.456e-01 | time:  28.2070 | largest rank:  16
+iter: 23 | eps: 6.456e-01 | time:  30.3035 | largest rank:  16
+iter: 24 WARNING:root:eps=0.64559 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a7c153240>
+| eps: 6.456e-01 | time:  31.6972 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 22.39s (1.066e+04 evals/s)
+
+finished applying gates in 86.43183135986328
+Transpiling now
+finished transpiling in 49.97803544998169
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 75.93904948234558
+Berry phase is:
+2.2894873352559975
+running run number: 8 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 7.899e-01 | time:   1.0202 | largest rank:  16
+iter: 1  | eps: 7.631e-01 | time:   3.0821 | largest rank:  16
+iter: 2  | eps: 7.889e-01 | time:   4.8885 | largest rank:  16
+iter: 3  | eps: 7.886e-01 | time:   5.9363 | largest rank:  16
+iter: 4  | eps: 7.886e-01 | time:   6.9874 | largest rank:  16
+iter: 5  | eps: 7.886e-01 | time:   8.1260 | largest rank:  16
+iter: 6  | eps: 7.886e-01 | time:   9.3082 | largest rank:  16
+iter: 7  | eps: 7.886e-01 | time:  10.3770 | largest rank:  16
+iter: 8  | eps: 7.886e-01 | time:  11.6159 | largest rank:  16
+iter: 9  | eps: 7.886e-01 | time:  12.8320 | largest rank:  16
+iter: 10 | eps: 7.886e-01 | time:  13.9551 | largest rank:  16
+iter: 11 | eps: 7.886e-01 | time:  15.1933 | largest rank:  16
+iter: 12 | eps: 7.886e-01 | time:  17.5975 | largest rank:  16
+iter: 13 | eps: 7.886e-01 | time:  18.8836 | largest rank:  16
+iter: 14 | eps: 7.886e-01 | time:  20.0166 | largest rank:  16
+iter: 15 | eps: 7.886e-01 | time:  21.1500 | largest rank:  16
+iter: 16 | eps: 7.886e-01 | time:  22.2650 | largest rank:  16
+iter: 17 | eps: 7.886e-01 | time:  23.3842 | largest rank:  16
+iter: 18 | eps: 7.886e-01 | time:  24.4196 | largest rank:  16
+iter: 19 | eps: 7.886e-01 | time:  25.5672 | largest rank:  16
+iter: 20 | eps: 7.886e-01 | time:  26.7336 | largest rank:  16
+iter: 21 | eps: 7.886e-01 | time:  27.9054 | largest rank:  16
+iter: 22 | eps: 7.886e-01 | time:  29.9942 | largest rank:  16
+iter: 23 | eps: 7.886e-01 | time:  31.7443 | largest rank:  16
+iter: 24 WARNING:root:eps=0.788586 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a635b1da0>
+| eps: 7.886e-01 | time:  32.8171 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 23.26s (1.026e+04 evals/s)
+
+finished applying gates in 83.40334105491638
+Transpiling now
+finished transpiling in 58.786916971206665
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 73.29012250900269
+Berry phase is:
+1.940029079537011
+running run number: 9 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 5.083e-01 | time:   1.1706 | largest rank:  16
+iter: 1  | eps: 5.213e-01 | time:   2.3342 | largest rank:  16
+iter: 2  | eps: 5.278e-01 | time:   3.5463 | largest rank:  16
+iter: 3  | eps: 5.249e-01 | time:   4.7213 | largest rank:  16
+iter: 4  | eps: 5.249e-01 | time:   5.8934 | largest rank:  16
+iter: 5  | eps: 5.249e-01 | time:   7.0911 | largest rank:  16
+iter: 6  | eps: 5.249e-01 | time:   8.3014 | largest rank:  16
+iter: 7  | eps: 5.249e-01 | time:   9.9459 | largest rank:  16
+iter: 8  | eps: 5.249e-01 | time:  12.1985 | largest rank:  16
+iter: 9  | eps: 5.249e-01 | time:  13.4215 | largest rank:  16
+iter: 10 | eps: 5.249e-01 | time:  14.5901 | largest rank:  16
+iter: 11 | eps: 5.249e-01 | time:  15.7695 | largest rank:  16
+iter: 12 | eps: 5.249e-01 | time:  17.3222 | largest rank:  16
+iter: 13 | eps: 5.249e-01 | time:  19.3380 | largest rank:  16
+iter: 14 | eps: 5.249e-01 | time:  20.7867 | largest rank:  16
+iter: 15 | eps: 5.249e-01 | time:  21.9642 | largest rank:  16
+iter: 16 | eps: 5.249e-01 | time:  24.0782 | largest rank:  16
+iter: 17 | eps: 5.249e-01 | time:  27.7230 | largest rank:  16
+iter: 18 | eps: 5.249e-01 | time:  28.9084 | largest rank:  16
+iter: 19 | eps: 5.249e-01 | time:  30.0778 | largest rank:  16
+iter: 20 | eps: 5.249e-01 | time:  31.2579 | largest rank:  16
+iter: 21 | eps: 5.249e-01 | time:  32.4601 | largest rank:  16
+iter: 22 | eps: 5.249e-01 | time:  33.6412 | largest rank:  16
+iter: 23 | eps: 5.249e-01 | time:  34.8309 | largest rank:  16
+iter: 24 WARNING:root:eps=0.524893 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a62f66660>
+| eps: 5.249e-01 | time:  36.7338 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 26.89s (8876 evals/s)
+
+finished applying gates in 94.23757243156433
+Transpiling now
+finished transpiling in 53.35129451751709
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 73.72231030464172
+Berry phase is:
+1.6942295210646587
+running run number: 10 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 7.484e-01 | time:   1.5707 | largest rank:  16
+iter: 1  | eps: 7.226e-01 | time:   2.6806 | largest rank:  16
+iter: 2  | eps: 7.226e-01 | time:   3.7878 | largest rank:  16
+iter: 3  | eps: 7.226e-01 | time:   4.8666 | largest rank:  16
+iter: 4  | eps: 7.226e-01 | time:   5.9402 | largest rank:  16
+iter: 5  | eps: 7.226e-01 | time:   7.0350 | largest rank:  16
+iter: 6  | eps: 7.226e-01 | time:   8.2392 | largest rank:  16
+iter: 7  | eps: 7.226e-01 | time:   9.3004 | largest rank:  16
+iter: 8  | eps: 7.226e-01 | time:  10.3906 | largest rank:  16
+iter: 9  | eps: 7.226e-01 | time:  12.0648 | largest rank:  16
+iter: 10 | eps: 7.226e-01 | time:  14.2435 | largest rank:  16
+iter: 11 | eps: 7.226e-01 | time:  15.3790 | largest rank:  16
+iter: 12 | eps: 7.226e-01 | time:  16.5096 | largest rank:  16
+iter: 13 | eps: 7.226e-01 | time:  17.6130 | largest rank:  16
+iter: 14 | eps: 7.226e-01 | time:  18.7421 | largest rank:  16
+iter: 15 | eps: 7.226e-01 | time:  19.8560 | largest rank:  16
+iter: 16 | eps: 7.226e-01 | time:  20.9913 | largest rank:  16
+iter: 17 | eps: 7.226e-01 | time:  22.1239 | largest rank:  16
+iter: 18 | eps: 7.226e-01 | time:  24.1991 | largest rank:  16
+iter: 19 | eps: 7.226e-01 | time:  26.5076 | largest rank:  16
+iter: 20 | eps: 7.226e-01 | time:  28.4849 | largest rank:  16
+iter: 21 | eps: 7.226e-01 | time:  29.5461 | largest rank:  16
+iter: 22 | eps: 7.226e-01 | time:  30.6105 | largest rank:  16
+iter: 23 | eps: 7.226e-01 | time:  31.6808 | largest rank:  16
+iter: 24 WARNING:root:eps=0.722586 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a71f2f060>
+| eps: 7.226e-01 | time:  32.7566 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 23.02s (1.037e+04 evals/s)
+
+finished applying gates in 87.70374965667725
+Transpiling now
+finished transpiling in 55.79318332672119
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 76.03211236000061
+Berry phase is:
+1.3968606214410764
+running run number: 11 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 6.853e-01 | time:   1.1962 | largest rank:  16
+iter: 1  | eps: 7.549e-01 | time:   2.4217 | largest rank:  16
+iter: 2  | eps: 7.621e-01 | time:   3.6801 | largest rank:  16
+iter: 3  | eps: 7.927e-01 | time:   5.5738 | largest rank:  16
+iter: 4  | eps: 7.931e-01 | time:   7.7653 | largest rank:  16
+iter: 5  | eps: 7.921e-01 | time:   8.9847 | largest rank:  16
+iter: 6  | eps: 7.931e-01 | time:  10.1926 | largest rank:  16
+iter: 7  | eps: 7.921e-01 | time:  11.4669 | largest rank:  16
+iter: 8  | eps: 7.931e-01 | time:  12.6760 | largest rank:  16
+iter: 9  | eps: 7.921e-01 | time:  13.8959 | largest rank:  16
+iter: 10 | eps: 7.931e-01 | time:  15.1166 | largest rank:  16
+iter: 11 | eps: 7.921e-01 | time:  16.3077 | largest rank:  16
+iter: 12 | eps: 7.931e-01 | time:  17.4929 | largest rank:  16
+iter: 13 | eps: 7.921e-01 | time:  19.4838 | largest rank:  16
+iter: 14 | eps: 7.931e-01 | time:  21.5168 | largest rank:  16
+iter: 15 | eps: 7.921e-01 | time:  22.7925 | largest rank:  16
+iter: 16 | eps: 7.931e-01 | time:  24.0157 | largest rank:  16
+iter: 17 | eps: 7.921e-01 | time:  25.2552 | largest rank:  16
+iter: 18 | eps: 7.931e-01 | time:  26.5448 | largest rank:  16
+iter: 19 | eps: 7.921e-01 | time:  27.7795 | largest rank:  16
+iter: 20 | eps: 7.931e-01 | time:  28.9888 | largest rank:  16
+iter: 21 | eps: 7.921e-01 | time:  30.2097 | largest rank:  16
+iter: 22 | eps: 7.931e-01 | time:  31.8303 | largest rank:  16
+iter: 23 | eps: 7.921e-01 | time:  34.2681 | largest rank:  16
+iter: 24 WARNING:root:eps=0.793084 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a6133c0e0>
+| eps: 7.931e-01 | time:  35.4685 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 25.54s (9347 evals/s)
+
+finished applying gates in 93.39616656303406
+Transpiling now
+finished transpiling in 61.14247965812683
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 75.69232678413391
+Berry phase is:
+1.3890372013515826
+running run number: 12 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 6.662e-01 | time:   1.2832 | largest rank:  16
+iter: 1  | eps: 6.348e-01 | time:   3.7568 | largest rank:  16
+iter: 2  | eps: 6.348e-01 | time:   5.1022 | largest rank:  16
+iter: 3  | eps: 6.348e-01 | time:   6.3098 | largest rank:  16
+iter: 4  | eps: 6.348e-01 | time:   7.5159 | largest rank:  16
+iter: 5  | eps: 6.348e-01 | time:   8.6771 | largest rank:  16
+iter: 6  | eps: 6.348e-01 | time:   9.8496 | largest rank:  16
+iter: 7  | eps: 6.348e-01 | time:  11.0085 | largest rank:  16
+iter: 8  | eps: 6.348e-01 | time:  12.2027 | largest rank:  16
+iter: 9  | eps: 6.348e-01 | time:  13.3810 | largest rank:  16
+iter: 10 | eps: 6.348e-01 | time:  14.8247 | largest rank:  16
+iter: 11 | eps: 6.348e-01 | time:  16.9994 | largest rank:  16
+iter: 12 | eps: 6.348e-01 | time:  18.4504 | largest rank:  16
+iter: 13 | eps: 6.348e-01 | time:  19.6566 | largest rank:  16
+iter: 14 | eps: 6.348e-01 | time:  20.8110 | largest rank:  16
+iter: 15 | eps: 6.348e-01 | time:  21.9903 | largest rank:  16
+iter: 16 | eps: 6.348e-01 | time:  23.1607 | largest rank:  16
+iter: 17 | eps: 6.348e-01 | time:  24.3319 | largest rank:  16
+iter: 18 | eps: 6.348e-01 | time:  25.5367 | largest rank:  16
+iter: 19 | eps: 6.348e-01 | time:  26.7164 | largest rank:  16
+iter: 20 | eps: 6.348e-01 | time:  28.1950 | largest rank:  16
+iter: 21 | eps: 6.348e-01 | time:  30.4659 | largest rank:  16
+iter: 22 | eps: 6.348e-01 | time:  31.8146 | largest rank:  16
+iter: 23 | eps: 6.348e-01 | time:  33.0381 | largest rank:  16
+iter: 24 WARNING:root:eps=0.634785 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a60f31a80>
+| eps: 6.348e-01 | time:  34.2364 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 24.6s (9702 evals/s)
+
+finished applying gates in 86.5361704826355
+Transpiling now
+finished transpiling in 61.69187378883362
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 76.6516342163086
+Berry phase is:
+1.1328726405096894
+running run number: 13 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 8.278e-01 | time:   1.6460 | largest rank:  16
+iter: 1  | eps: 7.968e-01 | time:   3.6239 | largest rank:  16
+iter: 2  | eps: 7.968e-01 | time:   4.6931 | largest rank:  16
+iter: 3  | eps: 7.968e-01 | time:   5.7616 | largest rank:  16
+iter: 4  | eps: 7.968e-01 | time:   6.8005 | largest rank:  16
+iter: 5  | eps: 7.968e-01 | time:   7.8125 | largest rank:  16
+iter: 6  | eps: 7.968e-01 | time:   8.7880 | largest rank:  16
+iter: 7  | eps: 7.968e-01 | time:   9.8442 | largest rank:  16
+iter: 8  | eps: 7.968e-01 | time:  10.9145 | largest rank:  16
+iter: 9  | eps: 7.968e-01 | time:  11.9960 | largest rank:  16
+iter: 10 | eps: 7.968e-01 | time:  13.0535 | largest rank:  16
+iter: 11 | eps: 7.968e-01 | time:  14.5910 | largest rank:  16
+iter: 12 | eps: 7.968e-01 | time:  16.6709 | largest rank:  16
+iter: 13 | eps: 7.968e-01 | time:  17.7693 | largest rank:  16
+iter: 14 | eps: 7.968e-01 | time:  18.8180 | largest rank:  16
+iter: 15 | eps: 7.968e-01 | time:  19.8632 | largest rank:  16
+iter: 16 | eps: 7.968e-01 | time:  20.9097 | largest rank:  16
+iter: 17 | eps: 7.968e-01 | time:  21.9891 | largest rank:  16
+iter: 18 | eps: 7.968e-01 | time:  23.0182 | largest rank:  16
+iter: 19 | eps: 7.968e-01 | time:  24.0879 | largest rank:  16
+iter: 20 | eps: 7.968e-01 | time:  25.1353 | largest rank:  16
+iter: 21 | eps: 7.968e-01 | time:  26.1758 | largest rank:  16
+iter: 22 | eps: 7.968e-01 | time:  27.4048 | largest rank:  16
+iter: 23 | eps: 7.968e-01 | time:  29.7177 | largest rank:  16
+iter: 24 WARNING:root:eps=0.796821 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a719c7880>
+| eps: 7.968e-01 | time:  31.0720 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 21.05s (1.134e+04 evals/s)
+
+finished applying gates in 87.25512528419495
+Transpiling now
+finished transpiling in 56.83120632171631
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 76.48714923858643
+Berry phase is:
+1.0092921712659553
+running run number: 14 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 9.280e-01 | time:   1.0775 | largest rank:  16
+iter: 1  | eps: 7.018e-01 | time:   2.3397 | largest rank:  16
+iter: 2  | eps: 7.279e-01 | time:   3.5523 | largest rank:  16
+iter: 3  | eps: 7.279e-01 | time:   4.7699 | largest rank:  16
+iter: 4  | eps: 7.279e-01 | time:   6.6873 | largest rank:  16
+iter: 5  | eps: 7.279e-01 | time:   8.7776 | largest rank:  16
+iter: 6  | eps: 7.279e-01 | time:   9.9461 | largest rank:  16
+iter: 7  | eps: 7.279e-01 | time:  11.1228 | largest rank:  16
+iter: 8  | eps: 7.279e-01 | time:  12.3195 | largest rank:  16
+iter: 9  | eps: 7.279e-01 | time:  13.5286 | largest rank:  16
+iter: 10 | eps: 7.279e-01 | time:  14.5965 | largest rank:  16
+iter: 11 | eps: 7.279e-01 | time:  15.7504 | largest rank:  16
+iter: 12 | eps: 7.279e-01 | time:  16.9852 | largest rank:  16
+iter: 13 | eps: 7.279e-01 | time:  18.1608 | largest rank:  16
+iter: 14 | eps: 7.279e-01 | time:  20.2985 | largest rank:  16
+iter: 15 | eps: 7.279e-01 | time:  22.1780 | largest rank:  16
+iter: 16 | eps: 7.279e-01 | time:  23.3810 | largest rank:  16
+iter: 17 | eps: 7.279e-01 | time:  24.5568 | largest rank:  16
+iter: 18 | eps: 7.279e-01 | time:  25.7775 | largest rank:  16
+iter: 19 | eps: 7.279e-01 | time:  26.9822 | largest rank:  16
+iter: 20 | eps: 7.279e-01 | time:  28.1741 | largest rank:  16
+iter: 21 | eps: 7.279e-01 | time:  29.3480 | largest rank:  16
+iter: 22 | eps: 7.279e-01 | time:  30.5703 | largest rank:  16
+iter: 23 | eps: 7.279e-01 | time:  31.7794 | largest rank:  16
+iter: 24 WARNING:root:eps=0.727867 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a76459e40>
+| eps: 7.279e-01 | time:  33.7645 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 24.18s (9873 evals/s)
+
+finished applying gates in 85.89571166038513
+Transpiling now
+finished transpiling in 58.561450481414795
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 75.37509536743164
+Berry phase is:
+0.8947933926115694
+running run number: 15 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 7.928e-01 | time:   1.8539 | largest rank:  16
+iter: 1  | eps: 7.722e-01 | time:   3.1456 | largest rank:  16
+iter: 2  | eps: 7.722e-01 | time:   4.1470 | largest rank:  16
+iter: 3  | eps: 7.722e-01 | time:   5.1473 | largest rank:  16
+iter: 4  | eps: 7.722e-01 | time:   6.1571 | largest rank:  16
+iter: 5  | eps: 7.722e-01 | time:   7.1423 | largest rank:  16
+iter: 6  | eps: 7.722e-01 | time:   8.1419 | largest rank:  16
+iter: 7  | eps: 7.722e-01 | time:   9.1252 | largest rank:  16
+iter: 8  | eps: 7.722e-01 | time:  10.1301 | largest rank:  16
+iter: 9  | eps: 7.722e-01 | time:  11.1238 | largest rank:  16
+iter: 10 | eps: 7.722e-01 | time:  12.1244 | largest rank:  16
+iter: 11 | eps: 7.722e-01 | time:  13.6664 | largest rank:  16
+iter: 12 | eps: 7.722e-01 | time:  15.2748 | largest rank:  16
+iter: 13 | eps: 7.722e-01 | time:  16.5310 | largest rank:  16
+iter: 14 | eps: 7.722e-01 | time:  18.2471 | largest rank:  16
+iter: 15 | eps: 7.722e-01 | time:  19.8938 | largest rank:  16
+iter: 16 | eps: 7.722e-01 | time:  20.9627 | largest rank:  16
+iter: 17 | eps: 7.722e-01 | time:  21.9427 | largest rank:  16
+iter: 18 | eps: 7.722e-01 | time:  22.9397 | largest rank:  16
+iter: 19 | eps: 7.722e-01 | time:  23.9247 | largest rank:  16
+iter: 20 | eps: 7.722e-01 | time:  24.9367 | largest rank:  16
+iter: 21 | eps: 7.722e-01 | time:  26.0941 | largest rank:  16
+iter: 22 | eps: 7.722e-01 | time:  28.0414 | largest rank:  16
+iter: 23 | eps: 7.722e-01 | time:  29.4056 | largest rank:  16
+iter: 24 WARNING:root:eps=0.772154 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a7245ca40>
+| eps: 7.722e-01 | time:  30.4062 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 20.62s (1.157e+04 evals/s)
+
+finished applying gates in 83.41311240196228
+Transpiling now
+finished transpiling in 54.15812373161316
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 73.06402635574341
+Berry phase is:
+0.8770006375826598
+running run number: 16 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 8.024e-01 | time:   1.8861 | largest rank:  16
+iter: 1  | eps: 8.027e-01 | time:   3.2038 | largest rank:  16
+iter: 2  | eps: 8.027e-01 | time:   4.4014 | largest rank:  16
+iter: 3  | eps: 8.027e-01 | time:   5.5869 | largest rank:  16
+iter: 4  | eps: 8.027e-01 | time:   6.6042 | largest rank:  16
+iter: 5  | eps: 8.027e-01 | time:   7.6578 | largest rank:  16
+iter: 6  | eps: 8.027e-01 | time:   8.7084 | largest rank:  16
+iter: 7  | eps: 8.027e-01 | time:   9.7580 | largest rank:  16
+iter: 8  | eps: 8.027e-01 | time:  10.7822 | largest rank:  16
+iter: 9  | eps: 8.027e-01 | time:  11.8221 | largest rank:  16
+iter: 10 | eps: 8.027e-01 | time:  13.2669 | largest rank:  16
+iter: 11 | eps: 8.027e-01 | time:  15.1871 | largest rank:  16
+iter: 12 | eps: 8.027e-01 | time:  16.4387 | largest rank:  16
+iter: 13 | eps: 8.027e-01 | time:  17.4697 | largest rank:  16
+iter: 14 | eps: 8.027e-01 | time:  18.5097 | largest rank:  16
+iter: 15 | eps: 8.027e-01 | time:  19.5726 | largest rank:  16
+iter: 16 | eps: 8.027e-01 | time:  20.5998 | largest rank:  16
+iter: 17 | eps: 8.027e-01 | time:  21.7150 | largest rank:  16
+iter: 18 | eps: 8.027e-01 | time:  22.7674 | largest rank:  16
+iter: 19 | eps: 8.027e-01 | time:  23.8239 | largest rank:  16
+iter: 20 | eps: 8.027e-01 | time:  24.8671 | largest rank:  16
+iter: 21 | eps: 8.027e-01 | time:  26.6854 | largest rank:  16
+iter: 22 | eps: 8.027e-01 | time:  28.3806 | largest rank:  16
+iter: 23 | eps: 8.027e-01 | time:  29.5003 | largest rank:  16
+iter: 24 WARNING:root:eps=0.802679 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a6bcd91c0>
+| eps: 8.027e-01 | time:  30.5381 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 21.62s (1.104e+04 evals/s)
+
+finished applying gates in 84.04293704032898
+Transpiling now
+finished transpiling in 55.52616596221924
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 72.17535018920898
+Berry phase is:
+0.9033529793845488
+running run number: 17 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 9.615e-01 | time:   0.9571 | largest rank:  16
+iter: 1  | eps: 9.719e-01 | time:   2.0076 | largest rank:  16
+iter: 2  | eps: 9.719e-01 | time:   3.0736 | largest rank:  16
+iter: 3  | eps: 9.719e-01 | time:   4.0682 | largest rank:  16
+iter: 4  | eps: 9.719e-01 | time:   5.0641 | largest rank:  16
+iter: 5  | eps: 9.719e-01 | time:   6.0009 | largest rank:  16
+iter: 6  | eps: 9.719e-01 | time:   6.9759 | largest rank:  16
+iter: 7  | eps: 9.719e-01 | time:   7.9455 | largest rank:  16
+iter: 8  | eps: 9.719e-01 | time:   8.9334 | largest rank:  16
+iter: 9  | eps: 9.719e-01 | time:   9.9156 | largest rank:  16
+iter: 10 | eps: 9.719e-01 | time:  12.1725 | largest rank:  16
+iter: 11 | eps: 9.719e-01 | time:  13.7699 | largest rank:  16
+iter: 12 | eps: 9.719e-01 | time:  14.7551 | largest rank:  16
+iter: 13 | eps: 9.719e-01 | time:  15.7196 | largest rank:  16
+iter: 14 | eps: 9.719e-01 | time:  16.6778 | largest rank:  16
+iter: 15 | eps: 9.719e-01 | time:  17.6481 | largest rank:  16
+iter: 16 | eps: 9.719e-01 | time:  18.6287 | largest rank:  16
+iter: 17 | eps: 9.719e-01 | time:  19.6113 | largest rank:  16
+iter: 18 | eps: 9.719e-01 | time:  20.6784 | largest rank:  16
+iter: 19 | eps: 9.719e-01 | time:  21.7955 | largest rank:  16
+iter: 20 | eps: 9.719e-01 | time:  22.8828 | largest rank:  16
+iter: 21 | eps: 9.719e-01 | time:  24.0948 | largest rank:  16
+iter: 22 | eps: 9.719e-01 | time:  26.1042 | largest rank:  16
+iter: 23 | eps: 9.719e-01 | time:  27.3723 | largest rank:  16
+iter: 24 WARNING:root:eps=0.971915 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a79df0040>
+| eps: 9.719e-01 | time:  28.3505 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 19.63s (1.216e+04 evals/s)
+
+finished applying gates in 79.53146314620972
+Transpiling now
+finished transpiling in 54.060003995895386
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 73.47396540641785
+Berry phase is:
+1.1793345706102811
+running run number: 18 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 9.047e-01 | time:   2.3894 | largest rank:  16
+iter: 1  | eps: 9.155e-01 | time:   3.5083 | largest rank:  16
+iter: 2  | eps: 9.155e-01 | time:   4.5634 | largest rank:  16
+iter: 3  | eps: 9.155e-01 | time:   5.6155 | largest rank:  16
+iter: 4  | eps: 9.155e-01 | time:   6.7847 | largest rank:  16
+iter: 5  | eps: 9.155e-01 | time:   7.8779 | largest rank:  16
+iter: 6  | eps: 9.155e-01 | time:   9.0303 | largest rank:  16
+iter: 7  | eps: 9.155e-01 | time:  10.2682 | largest rank:  16
+iter: 8  | eps: 9.155e-01 | time:  11.4311 | largest rank:  16
+iter: 9  | eps: 9.155e-01 | time:  12.4826 | largest rank:  16
+iter: 10 | eps: 9.155e-01 | time:  14.3471 | largest rank:  16
+iter: 11 | eps: 9.155e-01 | time:  15.8918 | largest rank:  16
+iter: 12 | eps: 9.155e-01 | time:  16.9202 | largest rank:  16
+iter: 13 | eps: 9.155e-01 | time:  17.9610 | largest rank:  16
+iter: 14 | eps: 9.155e-01 | time:  19.0052 | largest rank:  16
+iter: 15 | eps: 9.155e-01 | time:  20.1694 | largest rank:  16
+iter: 16 | eps: 9.155e-01 | time:  21.2601 | largest rank:  16
+iter: 17 | eps: 9.155e-01 | time:  22.4405 | largest rank:  16
+iter: 18 | eps: 9.155e-01 | time:  23.6377 | largest rank:  16
+iter: 19 | eps: 9.155e-01 | time:  24.7903 | largest rank:  16
+iter: 20 | eps: 9.155e-01 | time:  25.8858 | largest rank:  16
+iter: 21 | eps: 9.155e-01 | time:  28.0547 | largest rank:  16
+iter: 22 | eps: 9.155e-01 | time:  29.6222 | largest rank:  16
+iter: 23 | eps: 9.155e-01 | time:  30.7974 | largest rank:  16
+iter: 24 WARNING:root:eps=0.915536 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a7185b380>
+| eps: 9.155e-01 | time:  31.8100 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 22.37s (1.067e+04 evals/s)
+
+finished applying gates in 84.60274648666382
+Transpiling now
+finished transpiling in 54.78272604942322
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 73.71239376068115
+Berry phase is:
+0.9390189449874927
+running run number: 19 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 9.314e-01 | time:   1.0250 | largest rank:  16
+iter: 1  | eps: 9.371e-01 | time:   2.0797 | largest rank:  16
+iter: 2  | eps: 9.371e-01 | time:   3.1265 | largest rank:  16
+iter: 3  | eps: 9.371e-01 | time:   4.1559 | largest rank:  16
+iter: 4  | eps: 9.371e-01 | time:   5.2017 | largest rank:  16
+iter: 5  | eps: 9.371e-01 | time:   6.2543 | largest rank:  16
+iter: 6  | eps: 9.371e-01 | time:   7.3064 | largest rank:  16
+iter: 7  | eps: 9.371e-01 | time:   8.3732 | largest rank:  16
+iter: 8  | eps: 9.371e-01 | time:  10.4017 | largest rank:  16
+iter: 9  | eps: 9.371e-01 | time:  12.0240 | largest rank:  16
+iter: 10 | eps: 9.371e-01 | time:  13.1164 | largest rank:  16
+iter: 11 | eps: 9.371e-01 | time:  14.2788 | largest rank:  16
+iter: 12 | eps: 9.371e-01 | time:  15.4082 | largest rank:  16
+iter: 13 | eps: 9.371e-01 | time:  16.5117 | largest rank:  16
+iter: 14 | eps: 9.371e-01 | time:  17.7010 | largest rank:  16
+iter: 15 | eps: 9.371e-01 | time:  18.8881 | largest rank:  16
+iter: 16 | eps: 9.371e-01 | time:  20.0774 | largest rank:  16
+iter: 17 | eps: 9.371e-01 | time:  21.1257 | largest rank:  16
+iter: 18 | eps: 9.371e-01 | time:  22.9597 | largest rank:  16
+iter: 19 | eps: 9.371e-01 | time:  24.7549 | largest rank:  16
+iter: 20 | eps: 9.371e-01 | time:  25.8214 | largest rank:  16
+iter: 21 | eps: 9.371e-01 | time:  26.9544 | largest rank:  16
+iter: 22 | eps: 9.371e-01 | time:  28.0218 | largest rank:  16
+iter: 23 | eps: 9.371e-01 | time:  29.0654 | largest rank:  16
+iter: 24 WARNING:root:eps=0.937149 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a6854bd80>
+| eps: 9.371e-01 | time:  30.2390 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 21.59s (1.105e+04 evals/s)
+
+finished applying gates in 84.91332125663757
+Transpiling now
+finished transpiling in 53.04732060432434
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 72.90600442886353
+Berry phase is:
+0.6367035856836452
+running run number: 20 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 9.633e-01 | time:   1.1685 | largest rank:  16
+iter: 1  | eps: 9.640e-01 | time:   2.2554 | largest rank:  16
+iter: 2  | eps: 9.640e-01 | time:   3.4438 | largest rank:  16
+iter: 3  | eps: 9.640e-01 | time:   4.4863 | largest rank:  16
+iter: 4  | eps: 9.640e-01 | time:   5.6664 | largest rank:  16
+iter: 5  | eps: 9.640e-01 | time:   6.7851 | largest rank:  16
+iter: 6  | eps: 9.640e-01 | time:   7.8362 | largest rank:  16
+iter: 7  | eps: 9.640e-01 | time:   9.2102 | largest rank:  16
+iter: 8  | eps: 9.640e-01 | time:  11.3887 | largest rank:  16
+iter: 9  | eps: 9.640e-01 | time:  12.5456 | largest rank:  16
+iter: 10 | eps: 9.640e-01 | time:  13.5747 | largest rank:  16
+iter: 11 | eps: 9.640e-01 | time:  14.6155 | largest rank:  16
+iter: 12 | eps: 9.640e-01 | time:  15.6855 | largest rank:  16
+iter: 13 | eps: 9.640e-01 | time:  16.7306 | largest rank:  16
+iter: 14 | eps: 9.640e-01 | time:  17.8807 | largest rank:  16
+iter: 15 | eps: 9.640e-01 | time:  18.9365 | largest rank:  16
+iter: 16 | eps: 9.640e-01 | time:  19.9734 | largest rank:  16
+iter: 17 | eps: 9.640e-01 | time:  21.0118 | largest rank:  16
+iter: 18 | eps: 9.640e-01 | time:  22.3282 | largest rank:  16
+iter: 19 | eps: 9.640e-01 | time:  24.7992 | largest rank:  16
+iter: 20 | eps: 9.640e-01 | time:  25.9871 | largest rank:  16
+iter: 21 | eps: 9.640e-01 | time:  27.1196 | largest rank:  16
+iter: 22 | eps: 9.640e-01 | time:  28.1650 | largest rank:  16
+iter: 23 | eps: 9.640e-01 | time:  29.2057 | largest rank:  16
+iter: 24 WARNING:root:eps=0.964038 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a79306e80>
+| eps: 9.640e-01 | time:  30.2172 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 21.49s (1.111e+04 evals/s)
+
+finished applying gates in 83.89146637916565
+Transpiling now
+finished transpiling in 50.404539823532104
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cu', 60000), ('cx', 57600), ('crz', 50400), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  381620
+Depth:  339011
+Finished running in 72.11658906936646
+Berry phase is:
+0.6019729463665942
+running run number: 21 ----------
+cross device is None
+Functions that require cross-approximation can be accelerated with the optional maxvolpy package, which can be installed by 'pip install maxvolpy'. More info is available at https://bitbucket.org/muxas/maxvolpy.
+Cross-approximation over a 16D domain containing 65536 grid points:
+iter: 0  | eps: 1.000e+00 | time:   2.0514 | largest rank:  16
+iter: 1  | eps: 1.000e+00 | time:   3.3262 | largest rank:  16
+iter: 2  | eps: 1.000e+00 | time:   4.3151 | largest rank:  16
+iter: 3  | eps: 1.000e+00 | time:   5.2955 | largest rank:  16
+iter: 4  | eps: 1.000e+00 | time:   6.2904 | largest rank:  16
+iter: 5  | eps: 1.000e+00 | time:   7.2966 | largest rank:  16
+iter: 6  | eps: 1.000e+00 | time:   8.2833 | largest rank:  16
+iter: 7  | eps: 1.000e+00 | time:   9.2780 | largest rank:  16
+iter: 8  | eps: 1.000e+00 | time:  10.2749 | largest rank:  16
+iter: 9  | eps: 1.000e+00 | time:  11.3019 | largest rank:  16
+iter: 10 | eps: 1.000e+00 | time:  12.3795 | largest rank:  16
+iter: 11 | eps: 1.000e+00 | time:  14.0797 | largest rank:  16
+iter: 12 | eps: 1.000e+00 | time:  15.7333 | largest rank:  16
+iter: 13 | eps: 1.000e+00 | time:  16.8028 | largest rank:  16
+iter: 14 | eps: 1.000e+00 | time:  17.8144 | largest rank:  16
+iter: 15 | eps: 1.000e+00 | time:  18.8326 | largest rank:  16
+iter: 16 | eps: 1.000e+00 | time:  19.8118 | largest rank:  16
+iter: 17 | eps: 1.000e+00 | time:  20.8024 | largest rank:  16
+iter: 18 | eps: 1.000e+00 | time:  21.7922 | largest rank:  16
+iter: 19 | eps: 1.000e+00 | time:  22.7832 | largest rank:  16
+iter: 20 | eps: 1.000e+00 | time:  23.7853 | largest rank:  16
+iter: 21 | eps: 1.000e+00 | time:  24.8076 | largest rank:  16
+iter: 22 | eps: 1.000e+00 | time:  25.7821 | largest rank:  16
+iter: 23 | eps: 1.000e+00 | time:  27.5639 | largest rank:  16
+iter: 24 WARNING:root:eps=1 (larger than 1e-06) when cross-approximating <function probability_dist at 0x7e4a6e1ae700>
+| eps: 1.000e+00 | time:  29.3068 | largest rank:  16 <- max_iter was reached: 25
+Did 238700 function evaluations, which took 20.3s (1.176e+04 evals/s)
+
+finished applying gates in 82.40982675552368
+Transpiling now
+finished transpiling in 51.012248516082764
+Operations:  OrderedDict([('u2', 115200), ('ccx', 88800), ('cx', 57600), ('cu', 57600), ('crz', 36000), ('h', 4802), ('mcphase', 4800), ('unitary', 16), ('barrier', 1), ('measure', 1)])
+# of gates:  364820
+Depth:  322211
+Finished running in 70.23257064819336
+Berry phase is:
+0.0
+-------------------
+Finished running simulation
+J: [1.  1.  1.  1.  1.  1.  1.  1.  1.  1.  1.  1.  0.9 0.8 0.7 0.6 0.5 0.4
+ 0.3 0.2 0.1 0. ]
+a: [0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.  1.  1.  1.  1.  1.  1.  1.
+ 1.  1.  1.  1. ]
+B: [np.float64(3.045014977380883), np.float64(2.8753260818876734), np.float64(2.8786911840345124), np.float64(2.7547371862785153), np.float64(2.7740690803841264), np.float64(2.6896032521354987), np.float64(2.4154783150295733), np.float64(2.2894873352559975), np.float64(1.940029079537011), np.float64(1.6942295210646587), np.float64(1.3968606214410764), np.float64(1.3890372013515826), np.float64(1.1328726405096894), np.float64(1.0092921712659553), np.float64(0.8947933926115694), np.float64(0.8770006375826598), np.float64(0.9033529793845488), np.float64(1.1793345706102811), np.float64(0.9390189449874927), np.float64(0.6367035856836452), np.float64(0.6019729463665942), np.float64(0.0)]

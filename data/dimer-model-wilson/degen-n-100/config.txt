@@ -1,0 +1,34 @@
+-------------------------------------------------------------------
+STARTING BERRY PHASE CALCULATION
+-------------------------------------------------------------------
+Calculation data:
+-- System size: 6
+-- 1st bond strength: 1
+-- 2nd bond strength: 1
+-- Closed path steps: 100
+-- 0 threshold: 1e-10
+-- Processors to use: 8
+-------------------------------------------------------------------
+running site 0
+running site 1
+running site 2
+running site 3
+running site 4
+running site 5
+twist site 5 finished
+twist site 2 finished
+twist site 4 finished
+twist site 3 finished
+twist site 1 finished
+twist site 0 finished
+-------------------------------------------------------------------
+RESULTS
+-------------------------------------------------------------------
+Dimer pattern:
+[1. 1. 1. 1. 1. 1.]
+-------------------------------------------------------------------
+Berry phases:
+[0.88542697 0.64953797 0.95599017 0.32005448 1.42116191 0.00582596]
+-------------------------------------------------------------------
+Simulation time
+4.193678140640259 seconds

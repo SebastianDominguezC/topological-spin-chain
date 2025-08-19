@@ -536,7 +536,7 @@ if __name__ == "__main__":
     L = 4
     t0 = 0
     tf = 20
-    N = 100
+    N = 150
 
     # Interactions
     J = 1.0

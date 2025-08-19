@@ -1,0 +1,113 @@
+-------------------------------------------------------------------
+STARTING BERRY PHASE CALCULATION
+-------------------------------------------------------------------
+Calculation data:
+-- System size: 8
+-- Twist location: 0
+-- 1st link strength: 1
+-- 2nd link strengths: [0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.  1.1 1.2 1.3 1.4 1.5 1.6 1.7
+ 1.8 1.9 2. ]
+-- Time steps: 200
+-- 0 threshold: 1e-10
+-- Processors to use: 8
+-------------------------------------------------------------------
+Running sim 1 / 21 with J = 1 and dimer = 0.0
+-------
+Running sim 2 / 21 with J = 1 and dimer = 0.1
+-------
+Running sim 3 / 21 with J = 1 and dimer = 0.2
+-------
+Running sim 4 / 21 with J = 1 and dimer = 0.30000000000000004
+-------
+Running sim 5 / 21 with J = 1 and dimer = 0.4
+-------
+Running sim 6 / 21 with J = 1 and dimer = 0.5
+-------
+Running sim 7 / 21 with J = 1 and dimer = 0.6000000000000001
+-------
+Running sim 8 / 21 with J = 1 and dimer = 0.7000000000000001
+-------
+Running sim 9 / 21 with J = 1 and dimer = 0.8
+-------
+77860
+Circuit depth: 72452
+137589
+Circuit depth: 127781
+Running sim 10 / 21 with J = 1 and dimer = 0.9
+-------
+137589
+Circuit depth: 127781
+Running sim 11 / 21 with J = 1 and dimer = 1.0
+-------
+Running sim 12 / 21 with J = 1 and dimer = 1.1
+-------
+145389
+Circuit depth: 135181
+Running sim 13 / 21 with J = 1 and dimer = 1.2000000000000002
+-------
+145389
+Circuit depth: 135181
+Running sim 14 / 21 with J = 1 and dimer = 1.3
+-------
+145389
+Circuit depth: 135181
+145389
+Circuit depth: 135181
+Running sim 15 / 21 with J = 1 and dimer = 1.4000000000000001
+-------
+Running sim 16 / 21 with J = 1 and dimer = 1.5
+-------
+145389
+Circuit depth: 135181
+137589
+Circuit depth: 127781
+Running sim 17 / 21 with J = 1 and dimer = 1.6
+-------
+137589
+Circuit depth: 127781
+Running sim 18 / 21 with J = 1 and dimer = 1.7000000000000002
+-------
+Running sim 19 / 21 with J = 1 and dimer = 1.8
+-------
+145389
+Circuit depth: 135181
+Running sim 20 / 21 with J = 1 and dimer = 1.9000000000000001
+-------
+145389
+Circuit depth: 135181
+Running sim 21 / 21 with J = 1 and dimer = 2.0
+-------
+145389
+Circuit depth: 135181
+137589
+Circuit depth: 127781
+137589
+Circuit depth: 127781
+145389
+Circuit depth: 135181
+145389
+Circuit depth: 135181
+145389
+Circuit depth: 135181
+145389
+Circuit depth: 135181
+145389
+Circuit depth: 135181
+145389
+Circuit depth: 135181
+-------------------------------------------------------------------
+RESULTS
+-------------------------------------------------------------------
+Delta:
+[-1.  -0.9 -0.8 -0.7 -0.6 -0.5 -0.4 -0.3 -0.2 -0.1  0.   0.1  0.2  0.3
+  0.4  0.5  0.6  0.7  0.8  0.9  1. ]
+-------------------------------------------------------------------
+Berry phases:
+[2.99794217 3.02439319 3.00807686 3.01219656 2.9986424  3.0134425
+ 2.95847083 3.01126988 2.77195967 2.34863323 1.45475608 0.58719139
+ 0.20392131 0.07044183 0.04940138 0.0363338  0.035779   0.0394994
+ 0.03898965 0.04099067 0.04195543]
+-------------------------------------------------------------------
+Simulation time
+546.1214137077332 seconds
+-------------------------------------------------------------------

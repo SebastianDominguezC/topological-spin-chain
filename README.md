@@ -6,6 +6,7 @@ The present repository implements various codes to calculate the Berry phase of 
 - `dimer_qcircuit.py` ~ Quantum algorithm for Berry phase in a 1D dimerized chain.
 - `tetra_wilson.py` ~ Numerical diagonalization and integral for Berry phase in a 2D dimerized grid.
 - `tetra_unitary.py` ~ Sparse matrix aproach to quantum algorithm to calculate the Berry phase in a 2D dimerized grid.
-- `tetra_qcircuit.py` ~ Quantum algorithm for Berry phase in a 2D dimerized grid.
+- `tetra_qcircuit.py` ~ Quantum algorithm for Berry phase in a 2D dimerized grid using state preparation with Qiskit built-ins.
+- `tetra_tensors.py` ~ Same quantum algorithm as above, but state preparation is done by encoding the probability distribution into a tensor network via a quantics tensor train, which is then mapped to gates which prepare the state. Does not work as well as Qiskit's state prep.
 
-Please note that the tetramerized (2D dimerized) quantum circuit is not simulatable on a laptop, since ground state preparation takes too long of a time. It is a worthy research topic to find a way to start a ground state for a system as this one. The 1D quantum circuit is not runnable on hardware either, since there are too many operations in place, and the system will becomes noise before the algorithm can run.
+Please note that the quantum circuits are thousands of gates long (circuit depth ~100k), so they are not runnable on NISQ-era devices.

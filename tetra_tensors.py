@@ -8,9 +8,10 @@ from qiskit.circuit.library import (
     RXXGate,
     RYYGate,
     RZZGate,
-    XXPlusYYGate, StatePreparation
+    XXPlusYYGate,
 )
 from qiskit_aer import AerSimulator
+from qiskit.circuit.library import UnitaryGate
 
 from qiskit_aer.noise import (
     NoiseModel,
@@ -23,6 +24,9 @@ import time
 import numpy as np
 from scipy.sparse import kron, csr_matrix
 from scipy.sparse.linalg import eigsh
+
+import tntorch as tn
+import torch
 
 RXX = RXXGate
 RYY = RYYGate
@@ -113,10 +117,10 @@ def joined_paths(T, N):
 ### "Classical" stuff
 
 # Operational utilities
-pauli_x = csr_matrix(np.matrix([[0, 1], [1, 0]], dtype=np.complex_))
-pauli_y = csr_matrix(np.matrix([[0, -1j], [1j, 0]], dtype=np.complex_))
-pauli_z = csr_matrix(np.matrix([[1, 0], [0, -1]], dtype=np.complex_))
-identity = csr_matrix(np.matrix([[1, 0], [0, 1]], dtype=np.complex_))
+pauli_x = csr_matrix(np.matrix([[0, 1], [1, 0]], dtype=np.complex128))
+pauli_y = csr_matrix(np.matrix([[0, -1j], [1j, 0]], dtype=np.complex128))
+pauli_z = csr_matrix(np.matrix([[1, 0], [0, -1]], dtype=np.complex128))
+identity = csr_matrix(np.matrix([[1, 0], [0, 1]], dtype=np.complex128))
 
 
 # A function to build the matrix with correct order of kronecker products
@@ -162,7 +166,7 @@ def matrix_gen(i, j, n, I, J, periodic=True):
 # Gets an eigenvector from numpy object
 def extract_eigenvector(col, eigenvectors):
     n = eigenvectors.shape[0]
-    vec = np.zeros(n, dtype=np.complex_)
+    vec = np.zeros(n, dtype=np.complex128)
 
     for i, row in enumerate(eigenvectors):
         vec[i] = row[col][0]
@@ -425,97 +429,187 @@ def evolution_circuit(L, J, alpha, dt, dc, twist_indices):
     return qc
 
 
+# Ground state preparation
+def quantum_circuit_from_tt(tensor_network):
+    n_qubits = len(tensor_network.cores)
+    cores = tensor_network.cores
+
+    W = []
+
+    G = cores[0]
+    nk = G.shape[-1]
+    M = G.reshape(2, nk)
+    U, S, V = np.linalg.svd(M)
+    S = torch.tensor(np.diag(S), dtype=torch.complex128)
+
+    R = (S @ V).clone().detach()
+    G_next = cores[1]
+
+    cores[1] = np.einsum("ij,jkl->ikl", R, G_next)
+
+    W.append(U)
+
+    prev_lk = 1
+
+    for k in range(1, n_qubits):
+        G = cores[k]
+        nk = G.shape[-1]
+        mk = int(2 * 2 ** min(k, prev_lk))
+        prev_lk = np.log2(nk)
+        M = G.reshape(mk, nk)
+        U, S, V = np.linalg.svd(M)
+        S = torch.tensor(np.diag(S))
+
+        R = (S @ V).clone().detach()
+        W.append(U)
+
+        if k + 1 == n_qubits:
+            continue
+
+        G_next = cores[k + 1]
+
+        cores[k + 1] = np.einsum("ij,jkl->ikl", R, G_next)
+
+    return W
+
+
+def create_circuit(W_list: list, n: int):
+    circ = QuantumCircuit(n)
+    for i, unitary in enumerate(W_list):
+        circ.append(UnitaryGate(unitary), range(i, int(np.log2(len(unitary))) + i))
+
+    return circ
+
+
+# Parameters and sim run
 L = 4
 n_qubits = L**2
 noisy = False
 
 t0 = 0
 tf = 20
-N = 100
+N = 300
 
 T = tf - t0
 dt = T / N
 dc = 2 * np.pi / N
 
-J = 1.0
-alpha = 0.0
+changes = np.arange(0, 1.1, 0.1)
+ones = np.ones(len(changes))
+alphas = np.concatenate([changes, ones])
+Js = np.concatenate([ones, changes[::-1]])
+runs = len(Js)
+# alphas = np.arange(0, 2.1, 0.1)
+# runs = len(alphas)
+# Js = np.ones(runs)
 
 twist_indices = [[0, 1], [0, 4]]
 
-# Circuit
-Ht = tetramerized_lattice(L, J, alpha, [(0, 1), (0, 4)], [0, 0, 0, 0])
-psi = ground_state_optimized(Ht)[0]
+berry_phases = []
 
-start_time = time.time()
+for k in range(runs):
+    print(f"running run number: {k} ----------")
+    # Circuit
+    Ht = tetramerized_lattice(L, Js[k], alphas[k], [(0, 1), (0, 4)], [0, 0, 0, 0])
+    psi = ground_state_optimized(Ht)[0]
 
-# Preparation
-qc = QuantumCircuit(n_qubits + 1, 1)
+    start_time = time.time()
 
-print('preparing state')
-stateprep = StatePreparation(psi)
-print('... done')
+    # Preparation
+    qc = QuantumCircuit(n_qubits + 1, 1)
 
-qc.append(stateprep, range(1, n_qubits + 1))
-qc.h(0)
-qc.barrier()
+    def probability_dist(x):
+        results = []
 
-# Evolution
-evolution_gate = evolution_circuit(L, J, alpha, dt, dc, twist_indices).control(1)
-qc.append(evolution_gate, range(n_qubits + 1))
+        for bitstring in x:
+            index = int("0b" + "".join([str(int(val.item())) for val in bitstring]), 2)
+            results.append(psi[index])
 
-# Hadamard test
-qc.h(0)
-qc.measure(0, 0)
+        return torch.tensor(results)
 
-time_interval = time.time() - start_time
-print(f"finished applying gates in {time_interval}")
+    sample = [torch.arange(0, 2) for _ in range(n_qubits)]
 
-print("Transpiling now")
+    tensor_state = tn.cross(
+        function=probability_dist,
+        domain=sample,
+        function_arg="matrix",
+        ranks_tt=n_qubits,
+    )
 
-start_time = time.time()
+    state_preparation_gates = quantum_circuit_from_tt(tensor_state)
 
-# Noisy simulator
-simulator = AerSimulator(method="matrix_product_state")
+    state_preparation_circuit = create_circuit(state_preparation_gates[::-1], n_qubits)
 
-if noisy:
-    # Example error probabilities
-    p_gate1 = 0.0000001
+    qc.append(state_preparation_circuit, range(1, n_qubits + 1))
+    qc.h(0)
+    qc.barrier()
 
-    # QuantumError objects
-    error_gate1 = pauli_error([("X", p_gate1), ("I", 1 - p_gate1)])
-    error_gate2 = error_gate1.tensor(error_gate1)
+    # Evolution
+    evolution_gate = evolution_circuit(
+        L, Js[k], alphas[k], dt, dc, twist_indices
+    ).control(1)
 
-    # Add errors to noise model
-    noise_bit_flip = NoiseModel()
-    noise_bit_flip.add_all_qubit_quantum_error(error_gate1, ["u1", "u2", "u3"])
-    noise_bit_flip.add_all_qubit_quantum_error(error_gate2, ["cx"])
+    qc.append(evolution_gate, range(n_qubits + 1))
 
-    simulator = AerSimulator(method="matrix_product_state", noise_model=noise_bit_flip)
+    # Hadamard test
+    qc.h(0)
+    qc.measure(0, 0)
 
-# Transpile for simulator
-circ = transpile(qc, simulator, optimization_level=3)
+    time_interval = time.time() - start_time
+    print(f"finished applying gates in {time_interval}")
 
-time_interval = time.time() - start_time
-print(f"finished transpiling in {time_interval}")
-print("Operations: ", circ.count_ops())
-print("# of gates: ", sum(circ.count_ops().values()))
-print("Depth: ", circ.depth())
-start_time = time.time()
+    print("Transpiling now")
 
+    start_time = time.time()
 
-# Run and get counts
-result = simulator.run(circ, shots=10_000).result()
+    # Noisy simulator
+    simulator = AerSimulator()
 
-zeros = result.data()["counts"].get("0x0", 0)
-ones = result.data()["counts"].get("0x1", 0)
-total = zeros + ones
+    if noisy:
+        # Example error probabilities
+        p_gate1 = 0.0000001
 
-p0 = zeros / total
+        # QuantumError objects
+        error_gate1 = pauli_error([("X", p_gate1), ("I", 1 - p_gate1)])
+        error_gate2 = error_gate1.tensor(error_gate1)
 
-berry = 2 * np.arccos(np.sqrt(p0))
+        # Add errors to noise model
+        noise_bit_flip = NoiseModel()
+        noise_bit_flip.add_all_qubit_quantum_error(error_gate1, ["u1", "u2", "u3"])
+        noise_bit_flip.add_all_qubit_quantum_error(error_gate2, ["cx"])
 
-time_interval = time.time() - start_time
+        simulator = AerSimulator(noise_model=noise_bit_flip)
 
-print(f"Finished running in {time_interval}")
-print("Berry phase is:")
-print(berry)
+    # Transpile for simulator
+    circ = transpile(qc, simulator, optimization_level=3)
+
+    time_interval = time.time() - start_time
+    print(f"finished transpiling in {time_interval}")
+    print("Operations: ", circ.count_ops())
+    print("# of gates: ", sum(circ.count_ops().values()))
+    print("Depth: ", circ.depth())
+    start_time = time.time()
+
+    # Run and get counts
+    result = simulator.run(circ, shots=100_000).result()
+
+    zeros = result.data()["counts"].get("0x0", 0)
+    ones = result.data()["counts"].get("0x1", 0)
+    total = zeros + ones
+
+    p0 = zeros / total
+
+    berry = 2 * np.arccos(np.sqrt(p0))
+
+    time_interval = time.time() - start_time
+
+    print(f"Finished running in {time_interval}")
+    print("Berry phase is:")
+    print(berry)
+    berry_phases.append(berry)
+
+print("-------------------")
+print("Finished running simulation")
+print(f"J: {Js}")
+print(f"a: {alphas}")
+print(f"B: {berry_phases}")

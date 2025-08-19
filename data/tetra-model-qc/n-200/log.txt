@@ -1,0 +1,271 @@
+running run number: 0 ----------
+preparing state
+... done
+finished applying gates in 46.55245304107666
+Transpiling now
+finished transpiling in 346.4084417819977
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 15200), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  554658
+Depth:  469234
+Finished running in 147.4229335784912
+Berry phase is:
+3.0417513905974074
+running run number: 1 ----------
+preparing state
+... done
+finished applying gates in 38.498170375823975
+Transpiling now
+finished transpiling in 353.36460423469543
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 160.70595002174377
+Berry phase is:
+3.022526535746866
+running run number: 2 ----------
+preparing state
+... done
+finished applying gates in 42.42178273200989
+Transpiling now
+finished transpiling in 363.035715341568
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 156.43643736839294
+Berry phase is:
+3.0095877722490147
+running run number: 3 ----------
+preparing state
+... done
+finished applying gates in 39.16670775413513
+Transpiling now
+finished transpiling in 364.58933115005493
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 157.75640487670898
+Berry phase is:
+3.0714355547021506
+running run number: 4 ----------
+preparing state
+... done
+finished applying gates in 43.156527280807495
+Transpiling now
+finished transpiling in 357.7339768409729
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 154.2870135307312
+Berry phase is:
+2.954773514034793
+running run number: 5 ----------
+preparing state
+... done
+finished applying gates in 45.13606286048889
+Transpiling now
+finished transpiling in 362.30669236183167
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 154.3456482887268
+Berry phase is:
+2.9503037574225903
+running run number: 6 ----------
+preparing state
+... done
+finished applying gates in 48.87099838256836
+Transpiling now
+finished transpiling in 359.8991265296936
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 154.44214606285095
+Berry phase is:
+2.696428518510914
+running run number: 7 ----------
+preparing state
+... done
+finished applying gates in 47.383851051330566
+Transpiling now
+finished transpiling in 365.88736486434937
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 152.146151304245
+Berry phase is:
+2.4062187997745927
+running run number: 8 ----------
+preparing state
+... done
+finished applying gates in 42.521456241607666
+Transpiling now
+finished transpiling in 363.42698407173157
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 154.003338098526
+Berry phase is:
+2.057279531262809
+running run number: 9 ----------
+preparing state
+... done
+finished applying gates in 46.70718264579773
+Transpiling now
+finished transpiling in 359.4028513431549
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 154.25794959068298
+Berry phase is:
+1.6908041759558396
+running run number: 10 ----------
+preparing state
+... done
+finished applying gates in 44.03838658332825
+Transpiling now
+finished transpiling in 361.12786197662354
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 151.50574493408203
+Berry phase is:
+1.3414305047182185
+running run number: 11 ----------
+preparing state
+... done
+finished applying gates in 46.29750990867615
+Transpiling now
+finished transpiling in 352.0231137275696
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 151.42381501197815
+Berry phase is:
+1.3307166693233479
+running run number: 12 ----------
+preparing state
+... done
+finished applying gates in 43.06291747093201
+Transpiling now
+finished transpiling in 354.4396936893463
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 151.83435010910034
+Berry phase is:
+0.9785815560282314
+running run number: 13 ----------
+preparing state
+... done
+finished applying gates in 43.742072343826294
+Transpiling now
+finished transpiling in 360.74864077568054
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 149.89845609664917
+Berry phase is:
+0.6330954025107233
+running run number: 14 ----------
+preparing state
+... done
+finished applying gates in 45.264721632003784
+Transpiling now
+finished transpiling in 351.0900037288666
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 150.32273054122925
+Berry phase is:
+0.35868287767189794
+running run number: 15 ----------
+preparing state
+... done
+finished applying gates in 44.61558747291565
+Transpiling now
+finished transpiling in 359.5125813484192
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 151.58825039863586
+Berry phase is:
+0.17097115428297058
+running run number: 16 ----------
+preparing state
+... done
+finished applying gates in 44.906967878341675
+Transpiling now
+finished transpiling in 363.22345519065857
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 151.38967037200928
+Berry phase is:
+0.09320024576062956
+running run number: 17 ----------
+preparing state
+... done
+finished applying gates in 40.269267320632935
+Transpiling now
+finished transpiling in 359.91721630096436
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 151.69069480895996
+Berry phase is:
+0.026833620779677384
+running run number: 18 ----------
+preparing state
+... done
+finished applying gates in 41.28543496131897
+Transpiling now
+finished transpiling in 360.67289781570435
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 149.69391798973083
+Berry phase is:
+0.020000333348331935
+running run number: 19 ----------
+preparing state
+... done
+finished applying gates in 41.140753507614136
+Transpiling now
+finished transpiling in 357.8194124698639
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 149.45148468017578
+Berry phase is:
+0.014142253477523464
+running run number: 20 ----------
+preparing state
+... done
+finished applying gates in 39.960920572280884
+Transpiling now
+finished transpiling in 362.2858862876892
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68735), ('mcphase', 58400), ('crz', 44000), ('cu', 2400), ('barrier', 1), ('measure', 1)])
+# of gates:  583458
+Depth:  498034
+Finished running in 151.4152853488922
+Berry phase is:
+0.0
+running run number: 21 ----------
+preparing state
+... done
+finished applying gates in 39.90814185142517
+Transpiling now
+finished transpiling in 351.2679822444916
+Operations:  OrderedDict([('cx', 121919), ('u2', 112800), ('ccx', 88800), ('h', 86402), ('unitary', 68593), ('mcphase', 58400), ('crz', 29600), ('barrier', 1), ('measure', 1)])
+# of gates:  566516
+Depth:  481092
+Finished running in 148.2829873561859
+Berry phase is:
+0.0
+-------------------
+Finished running simulation
+J: [1.  1.  1.  1.  1.  1.  1.  1.  1.  1.  1.  1.  0.9 0.8 0.7 0.6 0.5 0.4
+ 0.3 0.2 0.1 0. ]
+a: [0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.  1.  1.  1.  1.  1.  1.  1.
+ 1.  1.  1.  1. ]
+B: [np.float64(3.0417513905974074), np.float64(3.022526535746866), np.float64(3.0095877722490147), np.float64(3.0714355547021506), np.float64(2.954773514034793), np.float64(2.9503037574225903), np.float64(2.696428518510914), np.float64(2.4062187997745927), np.float64(2.057279531262809), np.float64(1.6908041759558396), np.float64(1.3414305047182185), np.float64(1.3307166693233479), np.float64(0.9785815560282314), np.float64(0.6330954025107233), np.float64(0.35868287767189794), np.float64(0.17097115428297058), np.float64(0.09320024576062956), np.float64(0.026833620779677384), np.float64(0.020000333348331935), np.float64(0.014142253477523464), np.float64(0.0), np.float64(0.0)]

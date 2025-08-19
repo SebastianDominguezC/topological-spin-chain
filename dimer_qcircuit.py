@@ -407,7 +407,7 @@ def berry_phase_circuit(
     circ = transpile(qc, simulator, optimization_level=3)
 
     # Run and get counts
-    result = simulator.run(circ, shots=10_000).result()
+    result = simulator.run(circ, shots=100_000).result()
 
     zeros = result.data()["counts"].get("0x0", 0)
     ones = result.data()["counts"].get("0x1", 0)
@@ -472,7 +472,7 @@ if __name__ == "__main__":
 
     # Params
     J = 1
-    alpha = np.arange(0, 2.1, 0.25)
+    alpha = np.arange(0, 2.1, 0.1)
     # alpha = np.array([0.1])
 
     berry_phases = np.zeros(len(alpha))
