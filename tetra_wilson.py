@@ -352,7 +352,7 @@ if __name__ == "__main__":
     alphas = np.arange(0, 2.1, 0.1)
 
     # Twist site
-    twist_locations = [(0, 1), (0, 4), (1, 5), (4, 5)]
+    twist_locations = [(0, 1), (4, 5)]
 
     # Multi-processing
     pool = mp.Pool(mp.cpu_count())

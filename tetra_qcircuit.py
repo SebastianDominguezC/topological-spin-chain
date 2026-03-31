@@ -1,26 +1,15 @@
-import numpy as np
-import scipy as sp
-import multiprocessing as mp
 import time
+import numpy as np
 
 from qiskit import QuantumCircuit, transpile
 from qiskit.circuit.library import (
     RXXGate,
     RYYGate,
     RZZGate,
-    XXPlusYYGate, StatePreparation
+    XXPlusYYGate,
+    StatePreparation,
 )
 from qiskit_aer import AerSimulator
-
-from qiskit_aer.noise import (
-    NoiseModel,
-    pauli_error,
-)
-
-import multiprocessing as mp
-import time
-
-import numpy as np
 from scipy.sparse import kron, csr_matrix
 from scipy.sparse.linalg import eigsh
 
@@ -28,95 +17,13 @@ RXX = RXXGate
 RYY = RYYGate
 RZZ = RZZGate
 
-
-### Parameter space stuff (not all is used, just taken from Hatsugai)
-def path_up(T, N):
-    dt = T / N
-    t = np.arange(0, T, dt) + dt
-
-    theta = 2 * np.pi * t / T
-
-    return theta
-
-
-def path_up_down(T, N):
-    dt = T / N
-    t = np.arange(0, T, dt) + dt
-    theta = 2 * np.pi * t / T
-
-    i = N // 4
-
-    theta[i:] = 2 * np.pi * (1 - t[i:] / T) / 3
-
-    return theta
-
-
-def path_down(T, N):
-    dt = T / N
-    t = np.arange(0, T, dt) + dt
-
-    theta = 2 * np.pi * (1 - 3 * t / T)
-
-    i = N // 4
-
-    theta[i:] = 2 * np.pi * (1 - t[i:] / T) / 3
-
-    return theta
-
-
-# Parameter space paths
-def L1(T, N):
-    theta_1 = path_up(T, N)
-    theta_2 = path_up_down(T, N)
-    theta_3 = path_up_down(T, N)
-
-    return [theta_1, theta_2, theta_3]
-
-
-def L2(T, N):
-    theta_1 = path_down(T, N)
-    theta_2 = path_up(T, N)
-    theta_3 = path_up_down(T, N)
-
-    return [theta_1, theta_2, theta_3]
-
-
-def L3(T, N):
-    theta_1 = path_up_down(T, N)
-    theta_2 = path_down(T, N)
-    theta_3 = path_up(T, N)
-
-    return [theta_1, theta_2, theta_3]
-
-
-def L4(T, N):
-    theta_1 = path_up_down(T, N)
-    theta_2 = path_up_down(T, N)
-    theta_3 = path_down(T, N)
-
-    return [theta_1, theta_2, theta_3]
-
-
-def joined_paths(T, N):
-    l1 = L1(T, N)
-    l2 = L2(T, N)
-    l3 = L3(T, N)
-    l4 = L4(T, N)
-
-    theta_1 = np.concatenate((l1[0], l2[0], l3[0], l4[0]))
-    theta_2 = np.concatenate((l1[1], l2[1], l3[1], l4[1]))
-    theta_3 = np.concatenate((l1[2], l2[2], l3[2], l4[2]))
-
-    return [theta_1, theta_2, theta_3]
-
-
 ### "Classical" stuff
 
 # Operational utilities
-pauli_x = csr_matrix(np.matrix([[0, 1], [1, 0]], dtype=np.complex_))
-pauli_y = csr_matrix(np.matrix([[0, -1j], [1j, 0]], dtype=np.complex_))
-pauli_z = csr_matrix(np.matrix([[1, 0], [0, -1]], dtype=np.complex_))
-identity = csr_matrix(np.matrix([[1, 0], [0, 1]], dtype=np.complex_))
+pauli_x = csr_matrix(np.matrix([[0, 1], [1, 0]], dtype=np.complex128))
+pauli_y = csr_matrix(np.matrix([[0, -1j], [1j, 0]], dtype=np.complex128))
+pauli_z = csr_matrix(np.matrix([[1, 0], [0, -1]], dtype=np.complex128))
+identity = csr_matrix(np.matrix([[1, 0], [0, 1]], dtype=np.complex128))
 
 
 # A function to build the matrix with correct order of kronecker products
@@ -162,7 +69,7 @@ def matrix_gen(i, j, n, I, J, periodic=True):
 # Gets an eigenvector from numpy object
 def extract_eigenvector(col, eigenvectors):
     n = eigenvectors.shape[0]
-    vec = np.zeros(n, dtype=np.complex_)
+    vec = np.zeros(n, dtype=np.complex128)
 
     for i, row in enumerate(eigenvectors):
         vec[i] = row[col][0]
@@ -350,7 +257,7 @@ def c_split(n_qubits, c_indexes, twist_loc, twist, J, dt):
     for pair in c_indexes:
         time_rot = 2 * J * dt
 
-        if pair == twist_loc:
+        if pair == sorted(twist_loc):
             qc.append(spin_twist_interaction(time_rot, twist), pair)
             continue
 
@@ -425,9 +332,9 @@ def evolution_circuit(L, J, alpha, dt, dc, twist_indices):
     return qc
 
 
+# Parameters and sim run
 L = 4
 n_qubits = L**2
-noisy = False
 
 t0 = 0
 tf = 20
@@ -437,85 +344,86 @@ T = tf - t0
 dt = T / N
 dc = 2 * np.pi / N
 
-J = 1.0
-alpha = 0.0
+changes = np.arange(0.0, 1.1, 0.1)
+ones = np.ones(len(changes))
+alphas = np.concatenate([changes, ones])
+Js = np.concatenate([ones, changes[::-1]])
+
+runs = len(Js)
 
 twist_indices = [[0, 1], [0, 4]]
 
-# Circuit
-Ht = tetramerized_lattice(L, J, alpha, [(0, 1), (0, 4)], [0, 0, 0, 0])
-psi = ground_state_optimized(Ht)[0]
+berry_phases = []
 
-start_time = time.time()
+for k in range(runs):
+    print(f"running run number: {k} ----------")
+    # Circuit
+    Ht = tetramerized_lattice(L, Js[k], alphas[k], [(0, 1), (0, 4)], [0, 0, 0, 0])
+    psi = ground_state_optimized(Ht)[0]
 
-# Preparation
-qc = QuantumCircuit(n_qubits + 1, 1)
+    start_time = time.time()
 
-print('preparing state')
-stateprep = StatePreparation(psi)
-print('... done')
+    # Preparation
+    qc = QuantumCircuit(n_qubits + 1, 1)
 
-qc.append(stateprep, range(1, n_qubits + 1))
-qc.h(0)
-qc.barrier()
+    print("preparing state")
+    stateprep = StatePreparation(psi)
+    print("... done")
+    qc.append(stateprep, range(1, n_qubits + 1))
+    qc.h(0)
+    qc.barrier()
 
-# Evolution
-evolution_gate = evolution_circuit(L, J, alpha, dt, dc, twist_indices).control(1)
-qc.append(evolution_gate, range(n_qubits + 1))
+    # Evolution
+    evolution_gate = evolution_circuit(
+        L, Js[k], alphas[k], dt, dc, twist_indices
+    ).control(1)
 
-# Hadamard test
-qc.h(0)
-qc.measure(0, 0)
+    qc.append(evolution_gate, range(n_qubits + 1))
 
-time_interval = time.time() - start_time
-print(f"finished applying gates in {time_interval}")
+    # Hadamard test
+    qc.h(0)
+    qc.measure(0, 0)
 
-print("Transpiling now")
+    time_interval = time.time() - start_time
+    print(f"finished applying gates in {time_interval}")
 
-start_time = time.time()
+    print("Transpiling now")
 
-# Noisy simulator
-simulator = AerSimulator(method="matrix_product_state")
+    start_time = time.time()
 
-if noisy:
-    # Example error probabilities
-    p_gate1 = 0.0000001
+    # Simulator
+    simulator = AerSimulator()
 
-    # QuantumError objects
-    error_gate1 = pauli_error([("X", p_gate1), ("I", 1 - p_gate1)])
-    error_gate2 = error_gate1.tensor(error_gate1)
+    # Transpile for simulator
+    circ = transpile(qc, simulator, optimization_level=3)
 
-    # Add errors to noise model
-    noise_bit_flip = NoiseModel()
-    noise_bit_flip.add_all_qubit_quantum_error(error_gate1, ["u1", "u2", "u3"])
-    noise_bit_flip.add_all_qubit_quantum_error(error_gate2, ["cx"])
+    time_interval = time.time() - start_time
+    print(f"finished transpiling in {time_interval}")
+    print("Operations: ", circ.count_ops())
+    print("# of gates: ", sum(circ.count_ops().values()))
+    print("Depth: ", circ.depth())
+    start_time = time.time()
 
-    simulator = AerSimulator(method="matrix_product_state", noise_model=noise_bit_flip)
+    # Run and get counts
+    result = simulator.run(circ, shots=100_000).result()
 
-# Transpile for simulator
-circ = transpile(qc, simulator, optimization_level=3)
+    zeros = result.data()["counts"].get("0x0", 0)
+    ones = result.data()["counts"].get("0x1", 0)
+    total = zeros + ones
 
-time_interval = time.time() - start_time
-print(f"finished transpiling in {time_interval}")
-print("Operations: ", circ.count_ops())
-print("# of gates: ", sum(circ.count_ops().values()))
-print("Depth: ", circ.depth())
-start_time = time.time()
+    p0 = zeros / total
 
+    berry = 2 * np.arccos(np.sqrt(p0))
 
-# Run and get counts
-result = simulator.run(circ, shots=10_000).result()
+    time_interval = time.time() - start_time
 
-zeros = result.data()["counts"].get("0x0", 0)
-ones = result.data()["counts"].get("0x1", 0)
-total = zeros + ones
+    print(f"Finished running in {time_interval}")
+    print("Berry phase is:")
+    print(berry)
+    berry_phases.append(berry)
 
-p0 = zeros / total
-
-berry = 2 * np.arccos(np.sqrt(p0))
-
-time_interval = time.time() - start_time
-
-print(f"Finished running in {time_interval}")
-print("Berry phase is:")
-print(berry)
+print("-------------------")
+print("Finished running simulation")
+print(f"J: {Js}")
+print(f"a: {alphas}")
+print(f"B: {berry_phases}")
